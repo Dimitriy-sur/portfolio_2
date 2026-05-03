@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+    <title>Пантеон</title>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <header class="header">
+          <img src="./media/icons/logo.png" alt="" class="logo" width="230px" />
+          <div class="menu">
+            <ul>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#galery">Галерея</a></li>
+              <li><a href="#tickets">Абонементы</a></li>
+              <li><a href="#trainers">Тренеры</a></li>
+              <li><a href="#questions">Контакты</a></li>
+            </ul>
+          </div>
+          <a id="tel-num" href="tel:+74964161916">+7 (496) 416-19-16 </a>
+          <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </header>
+        <div class="hero-description">
+          <h1>Фитнес клуб Пантеон</h1>
+          <p>Лучше нас только боги</p>
+          <button type="button" class="btn hero-btn">
+            <span>Получить консультацию</span>
+          </button>
+        </div>
+        <div class="hero-footer">
+          <a href=""><img src="./media/icons/arrow_down.png" alt="" /></a>
+          <div class="social">
+            <a href=""><img src="./media/icons/instagram.png" alt="" /></a>
+            <a href=""><img src="./media/icons/vkontakte.png" alt="" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="container">
+        <div class="main-block">
+          <div class="images">
+            <img src="./media/images/about-1.jpg" alt="" class="img-1" />
+            <img src="./media/images/about-2.jpg" alt="" class="img-2" />
+          </div>
+          <div class="main-description">
+            <h3>Новый образ жизни</h3>
+            <p class="main-desc-text">
+              Став частью нашей команды, вы сможете изменить привычный ритм
+              жизни и сделать каждый свой день особенным, а формат наших
+              тренировок позволит вам раскрыть потенциал вашего тела на 100%.
+            </p>
+            <button type="button" class="btn">
+              <span>Получить консультацию</span>
+            </button>
+          </div>
+        </div>
+        <div class="advantages-list">
+          <div class="advantages-item">
+            <img
+              src="./media/icons/advantage-1.png"
+              alt=""
+              width="64"
+              height="64"
+            />
+            <p>Полностью укомплектованный зал</p>
+          </div>
+          <div class="advantages-item">
+            <img
+              src="./media/icons/advantage-2.png"
+              alt=""
+              width="64"
+              height="64"
+            />
+            <p>Профессиональное оборудование</p>
+          </div>
+          <div class="advantages-item">
+            <img
+              src="./media/icons/advantage-3.png"
+              alt=""
+              width="64"
+              height="64"
+            />
+            <p>Удобное расположение в центре города</p>
+          </div>
+          <div class="advantages-item">
+            <img
+              src="./media/icons/advantage-4.png"
+              alt=""
+              width="64"
+              height="64"
+            />
+            <p>Доступная стоимость занятий</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="galery" class="galery">
+      <div class="container">
+        <h3>Галерея</h3>
+        <div class="slider">
+          <button type="button" class="slider-button prev-personal">
+            <img
+              src="./media/icons/bi_arrow-left.png"
+              width="40"
+              height="40"
+              alt=""
+            />
+          </button>
+          <div class="overflow">
+            <div class="slides-personal">
+              <div class="slide-personal">
+                <img src="./media/images/personal-1.jpg" alt="" />
+              </div>
+              <div class="slide-personal">
+                <img src="./media/images/personal-2.jpg" alt="" />
+              </div>
+              <div class="slide-personal">
+                <img src="./media/images/personal-3.jpg" alt="" />
+              </div>
+              <div class="slide-personal">
+                <img src="./media/images/personal-4.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slider-button next-personal">
+            <img
+              src="./media/icons/bi_arrow-right.png"
+              width="40"
+              height="40"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="slider">
+          <button type="button" class="slider-button prev-gym">
+            <img
+              src="./media/icons/bi_arrow-left.png"
+              width="40"
+              height="40"
+              alt=""
+            />
+          </button>
+          <div class="overflow">
+            <div class="slides-gym">
+              <div class="slide-gym">
+                <img src="./media/images/gym.jpg" alt="" />
+              </div>
+              <div class="slide-gym">
+                <img src="./media/images/gym-2.jpg" alt="" />
+              </div>
+              <div class="slide-gym">
+                <img src="./media/images/gym-3.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slider-button next-gym">
+            <img
+              src="./media/icons/bi_arrow-right.png"
+              width="40"
+              height="40"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="tickets" class="tickets">
+      <div class="container">
+        <h2>Абонементы</h2>
+        <div class="table-tickets">
+          <table class="tickets-main">
+            <tbody>
+              <tr>
+                <td>Кол-во занятий</td>
+                <td id="one"><b>1 тренировка</b></td>
+                <td id="two"><b>4 тренировки</b></td>
+                <td id="tree"><b>8 тренировок</b></td>
+                <td id="four"><b>12 тренировок</b></td>
+              </tr>
+              <tr>
+                <td><b>Персональный тренинг с инструктором</b></td>
+                <td>700 руб.</td>
+                <td>2600 руб. (действителен в течении 3 недель)</td>
+                <td>5200 руб. (действителен в течении 6 недель)</td>
+                <td>7200 руб. (действителен в течении 10 недель)</td>
+              </tr>
+              <tr>
+                <td><b>Самостоятельные тренировки в тренажерном зале</b></td>
+                <td>250 руб.</td>
+                <td>—</td>
+                <td>&nbsp1500 руб. (действителен в течении 30 дней)</td>
+                <td>2000 руб. (действителен в течении 30 дней)</td>
+              </tr>
+              <tr>
+                <td><b>Зал групповых программ</b></td>
+                <td>300 руб.</td>
+                <td>—</td>
+                <td>2000 руб. (действителен в течении 30 дней)</td>
+                <td>2750 руб. (действителен в течении 45 дней)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 id="by-time">Абонемент по времени</h2>
+        <div class="table-tickets">
+          <table class="tickets-main time">
+            <tbody>
+              <tr>
+                <td>Тип карты</td>
+                <td><b>12 месяцев</b></td>
+                <td><b>6 месяцев</b></td>
+                <td><b>3 месяца</b></td>
+                <td><b>1 месяц</b></td>
+              </tr>
+              <tr>
+                <td>
+                  <b>
+                    Индивидуальная,<br />
+                    полная без ограничения в посещении /</b
+                  >
+                  8:00 – 23:00
+                </td>
+                <td>18000 (+200 мин. солярия)</td>
+                <td>12000</td>
+                <td>7000</td>
+                <td>2500</td>
+              </tr>
+              <tr>
+                <td><b>Индивидуальная, дневная /</b> 8:00 – 17:00</td>
+                <td>—</td>
+                <td>9500</td>
+                <td>5500</td>
+                <td>2000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 id="by-one">Разовые тренировки</h2>
+        <div class="training-list">
+          <div class="training-item">
+            <p><b>Самостоятельные тренировки в тренажерном зале</b></p>
+            <div class="gym-time">
+              <span>8:00 – 23:00</span>
+              <img
+                src="./media/icons/gym-time.png"
+                alt=""
+                width="34"
+                height="auto"
+              />
+            </div>
+            <span>250₽</span>
+            <p>1 тренировка</p>
+            <button type="button" class="btn gym-btn">
+              <span>Узнать</span>
+            </button>
+          </div>
+          <div class="training-item">
+            <p><b>Персональный тренинг с инструктором</b></p>
+            <div class="gym-time">
+              <span>8:00 – 23:00</span>
+              <img
+                src="./media/icons/gym-time.png"
+                alt=""
+                width="34"
+                height="auto"
+              />
+            </div>
+            <span>700₽</span>
+            <p>1 тренировка</p>
+            <button type="button" class="btn gym-btn">
+              <span>Узнать</span>
+            </button>
+          </div>
+          <div class="training-item">
+            <p>
+              <b
+                >Зал групповых<br />
+                программ</b
+              >
+            </p>
+            <div class="gym-time">
+              <span>график занятий уточняйте у администратора</span>
+              <img
+                src="./media/icons/gym-time.png"
+                alt=""
+                width="34"
+                height="auto"
+              />
+            </div>
+            <span>300₽</span>
+            <p>1 тренировка</p>
+            <button type="button" class="btn gym-btn">
+              <span>Узнать</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="trainers" class="trainers">
+      <div class="container">
+        <div class="trainers-content">
+          <h2>Тренеры</h2>
+          <div class="overflow">
+            <div class="trainers-list">
+              <div class="trainers-item">
+                <img
+                  src="./media/images/trainer-1.jpg"
+                  alt=""
+                  width="308"
+                  height="430"
+                />
+                <p class="trainer-text">
+                  <span>Илья Панченко</span><br />
+                  Персональный тренер<br />
+                  Инструктор тренажерного зала<br />
+                  Опыт работы — 4 года
+                </p>
+              </div>
+              <div class="trainers-item">
+                <img
+                  src="./media/images/trainer-2.jpg"
+                  alt=""
+                  width="308"
+                  height="430"
+                />
+                <p class="trainer-text">
+                  <span>Екатерина Сосина-Нуньес</span><br />
+                  Фитнес-тренер<br />
+                  Опыт работы — 4 года
+                </p>
+              </div>
+              <div class="trainers-item">
+                <img
+                  src="./media/images/trainer-3.jpg"
+                  alt=""
+                  width="308"
+                  height="430"
+                />
+                <p class="trainer-text">
+                  <span>Юлия Белова</span><br />
+                  Фитнес-тренер<br />
+                  Опыт работы — 4 года
+                </p>
+              </div>
+              <div class="trainers-item">
+                <img
+                  src="./media/images/trainer-4.jpg"
+                  alt=""
+                  width="308"
+                  height="430"
+                />
+                <p class="trainer-text">
+                  <span>Михаил Алешин</span><br />
+                  Фитнес-тренер<br />
+                  Опыт работы — 4 года
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="trainers-buttons">
+        <button type="button" class="trainer-btn-prev">
+          <img src="./media/icons/bi_arrow-left.png" alt="" />
+        </button>
+        <button type="button" class="trainer-btn-next">
+          <img src="./media/icons/bi_arrow-right.png" alt="" />
+        </button>
+      </div>
+    </section>
+    <section id="questions" class="questions">
+      <div class="container">
+        <div class="window">
+          <h3>Остались вопросы?</h3>
+          <p>
+            Оставьте Ваш номер телефона<br />
+            и мы
+            <span>обязательно c Вами свяжемся</span>
+          </p>
+          <form action="" method="post">
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Введите имя"
+            />
+            <input
+              id="number-tel"
+              type="text"
+              name="tel"
+              placeholder="Введите телефон"
+            />
+            <button id="post" type="submit" class="btn hover-effect">
+              <span>Получить консультацию</span>
+            </button>
+          </form>
+          <p>
+            Нажимая на кнопку вы соглашаетесь с политикой конфиденциальности
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="map">
+      <img src="./media/images/map.jpg" alt="" />
+      <div class="contacts">
+        <h3>Контакты</h3>
+        <div class="info">
+          <div class="line">
+            <img src="./media/icons/location.png" alt="" />
+            <p>г. Орехово-Зуево, ул. Ленина 84</p>
+          </div>
+          <div class="line">
+            <img src="./media/icons/clock.png" alt="" />
+            <p>Ежедневно с 8:00 до 23:00</p>
+          </div>
+          <div class="line">
+            <img src="./media/icons/phone.png" alt="" />
+            <div class="column-tel">
+              <a href="tel:+">+7 (496) 416-19-16</a>
+              <a href="tel:+">+7 (925) 881-21-70</a>
+            </div>
+          </div>
+        </div>
+        <p>Подписывайтесь на наши соц.сети</p>
+        <div class="social">
+          <a href=""
+            ><img src="./media/icons/fontisto_instagram.png" alt=""
+          /></a>
+          <a href=""><img src="./media/icons/fontisto_vk.png" alt="" /></a>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container">
+        <div class="grid-table">
+          <div class="grid-block block1">
+            <img
+              src="./media/icons/logo-footer.png"
+              alt=""
+              class="logo"
+              width="230px"
+            />
+            <div class="burger-footer">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="footer-text">
+              <p class="copyright">© Все права защищены</p>
+              <p id="place">Орехово-Зуево, 2013-2022</p>
+            </div>
+          </div>
+          <div class="grid-table-inner">
+            <div class="grid-block block2">
+              <a href="#about">О нас</a>
+              <a href="#galery">Галерея</a>
+              <a href="#tickets">Абонементы</a>
+            </div>
+            <div class="grid-block block3">
+              <a href="#trainers">Тренеры</a>
+              <a href="#questions">Контакты</a>
+            </div>
+            <div class="grid-block block4">
+              <a href="#tickets">Абонемент</a>
+              <a href="#by-time">Абонемент по времени</a>
+              <a href="#by-one">Разовые тренировки</a>
+            </div>
+          </div>
+          <div class="grid-table-inner2">
+            <div class="grid-block block5">
+              <p class="our-links">Наши соц.сети</p>
+              <div class="links">
+                <a href=""
+                  ><img src="./media/icons/fontisto_instagram.png" alt=""
+                /></a>
+                <a href=""
+                  ><img src="./media/icons/fontisto_vk.png" alt=""
+                /></a>
+              </div>
+            </div>
+            <div class="grid-block block6">
+              <p>г. Орехово-Зуево, ул. Ленина 84</p>
+              <p>Ежедневно с 8:00 до 23:00</p>
+              <p>+7 (496) 416-19-16, +7 (925) 881-21-70</p>
+              <p>Политика конфиденциальности</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p class="copyright">© Все права защищены</p>
+          <br />
+          <p id="place">Орехово-Зуево, 2013-2022</p>
+        </div>
+      </div>
+    </section>
+    <dialog>
+      <div class="container">
+        <div class="logo-dialog">
+          <img src="./media/icons/logo-footer.png" alt="" />
+          <button
+            onclick="document.querySelector('dialog').close()"
+            id="close-button-dialog"
+            tabindex="-1"
+          >
+            <img
+              id="close"
+              src="./media/icons/close.png"
+              alt=""
+              width="40"
+              height="40"
+            />
+          </button>
+        </div>
+        <div class="dialog-text">
+          <div id="ok">
+            <img src="./media/icons/OK.png" alt="" />
+            <p>Данные успешно отправлены</p>
+          </div>
+          <p class="ok">Мы свяжемся с вами вближайшее время</p>
+          <div id="adress">
+            <div class="line">
+              <img src="./media/icons/location.png" alt="" />
+              <p>г. Орехово-Зуево, ул. Ленина 84</p>
+            </div>
+            <div class="line">
+              <img src="./media/icons/clock.png" alt="" />
+              <p>Ежедневно с 8:00 до 23:00</p>
+            </div>
+          </div>
+          <div class="social-block">
+            <p class="">Подписывайтесь на наши соц.сети</p>
+            <div class="social">
+              <a href=""
+                ><img src="./media/icons/fontisto_instagram.png" alt=""
+              /></a>
+              <a href=""><img src="./media/icons/fontisto_vk.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+    <script>
+      document.querySelector(".burger").onclick = function () {
+        document.querySelector(".burger").classList.toggle("open");
+        document.querySelector(".menu").classList.toggle("open-menu");
+
+        const tel = document.getElementById("tel-num");
+        const cloneTel = tel.cloneNode(true);
+        const li = document.createElement("li");
+
+        if (document.querySelector(".burger.open")) {
+          if (document.querySelector(".open-menu ul").childElementCount == 5) {
+            li.appendChild(cloneTel);
+            document.querySelector(".open-menu ul").appendChild(li);
+          }
+        } else {
+          document.querySelector(".menu ul").lastChild.remove();
+        }
+      };
+
+      document.querySelector(".burger-footer").onclick = function () {
+        document.querySelector(".burger-footer").classList.toggle("open");
+        document
+          .querySelector(".grid-table-inner")
+          .classList.toggle("open-grid");
+      };
+    </script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/slider_gym.js"></script>
+    <script src="./js/slider_trainers.js"></script>
+    <script src="./js/dialog.js"></script>
+  </body>
+</html>

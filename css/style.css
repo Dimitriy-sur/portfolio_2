@@ -1,0 +1,1030 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+  scrollbar-gutter: stable;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
+ */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not([fill="none"],
+    [fill^="url"])) {
+  fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+:where([stroke]:not([stroke="none"],
+    [stroke^="url"])) {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a,
+ul li a:hover {
+  text-decoration: none;
+  color: var(--color-light);
+}
+
+
+
+
+
+:root {
+  --color-body: #0C1417;
+  --color-light: #FFFFFF;
+  --color-orange: #F7931E;
+
+  --border: 1px solid var(--color-light);
+
+  --font-family: 'Montserrat', sans-serif;
+
+  --button-height: 60px;
+  --padding-button: 20px 33px;
+  --gap: 30px;
+
+  --container-margin: 60px;
+
+  --transition-duration: 0.3s;
+}
+
+body {
+  background: var(--color-body);
+  font-family: var(--font-family);
+  color: var(--color-light);
+  font-size: 16px;
+}
+
+.container {
+  margin-inline: var(--container-margin);
+  max-width: calc(1440 - 2 * var(--container-margin));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+}
+
+a,
+button {
+  text-decoration: none;
+  color: var(--color-light);
+}
+
+/* button, */
+.btn {
+  display: block;
+  position: relative;
+  z-index: 5;
+  padding: var(--padding-button);
+  transform: skew(-20deg);
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  transition: var(--transition-duration);
+}
+
+/* button span, */
+.btn span {
+  transform: skew(20deg);
+  display: inline-block;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -10;
+  top: 8px;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  background-color: #F7931E;
+  transition: var(--transition-duration);
+  transform: opacity;
+  pointer-events: none
+}
+
+.btn::after,
+.hero-btn::after {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: var(--border);
+  transition: var(--transition-duration);
+  transform: opacity;
+}
+
+.btn:hover,
+.btn:hover::after {
+  opacity: 0.8;
+}
+
+button:hover:before {
+  top: 0;
+  left: 0;
+}
+
+
+.slider-button {
+  border: none;
+  background: transparent;
+  transition: opacity var(--transition-duration);
+}
+
+.slider-button:hover {
+  opacity: 0.7;
+}
+
+.btn.hover-effect:hover {
+  background-color: var(--color-orange);
+}
+
+/* main */
+
+.hero {
+  height: 950px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url('../media/images/main-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+
+.menu ul li a,
+a {
+  opacity: 1;
+  transition-duration: var(--transition-duration);
+  transform: opacity;
+}
+
+.menu ul li a:hover,
+a:hover {
+  opacity: 0.8;
+}
+
+.burger,
+.burger-footer {
+  display: none;
+  width: 25px;
+  height: 25px;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.burger span,
+.burger-footer span {
+  width: 80%;
+  height: 2px;
+  border-radius: 20px;
+  background-color: var(--color-light);
+  transition: all var(--transition-duration) ease;
+}
+
+.hero-description {
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 35px;
+}
+
+.hero-description h1 {
+  font-size: 68px;
+}
+
+.hero-description p {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.hero-footer {
+  margin-bottom: 50px;
+  margin-inline: auto 0;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.about {
+  margin-block: 100px;
+}
+
+.about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 100px;
+}
+
+.main-block {
+  margin-inline: 70px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center;
+  row-gap: 60px;
+}
+
+.images {
+  height: 472px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: 30px;
+}
+
+.img-1 {
+  align-self: flex-start;
+}
+
+.img-2 {
+  align-self: flex-end;
+}
+
+
+.main-description {
+  margin-left: 75px;
+  width: 450px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  row-gap: 45px;
+}
+
+.main-description h3 {
+  font-size: 30px;
+}
+
+.main-description p {
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.advantages-list {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 50px;
+}
+
+.advantages-item {
+  display: flex;
+  column-gap: 30px;
+}
+
+.advantages-item p {
+  font-size: 18px;
+}
+
+/* galery */
+
+.galery .container {
+  margin-block: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.galery h3 {
+  font-size: 30px;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.overflow {
+  overflow-x: auto;
+}
+
+.slides-personal,
+.slides-gym {
+  display: flex;
+  gap: 30px;
+  transition: var(--transition-duration);
+  overflow: hidden;
+}
+
+
+.overflow::-webkit-scrollbar {
+  height: 4px;
+  /* Ширина всей полосы */
+}
+
+
+.overflow::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Цвет дорожки */
+}
+
+.overflow::-webkit-scrollbar-thumb {
+  background: var(--color-orange);
+  /* Цвет бегунка */
+}
+
+
+.overflow::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange);
+  scale: 1.1;
+  /* Эффект при наведении */
+}
+
+/* section.tickets */
+
+
+/* tickets-main */
+
+.tickets {
+  padding-block: 100px;
+  background-color: rgba(255, 255, 255, 0.98);
+  color: var(--color-body);
+  overflow: hidden;
+
+}
+
+.tickets .container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  text-align: center;
+  /* overflow-x: scroll; */
+}
+
+.table-tickets {
+  overflow-x: auto;
+}
+
+/* tables */
+
+.tickets-main {
+  width: 1096px;
+  /* overflow-x: auto;
+  touch-action: pan-x; */
+  margin-inline: auto;
+}
+
+
+
+.tickets-main tbody tr:nth-child(1) {
+  border-bottom: 1px solid rgba(12, 20, 23, 0.5);
+}
+
+.tickets-main td {
+  padding: 20px 10px;
+  width: 219px;
+  transition: var(--transition-duration);
+  cursor: default;
+}
+
+.tickets-main tbody tr td:not(:first-child) {
+  text-align: center;
+}
+
+.tickets-main tbody tr:not(:first-child) td:not(:first-child):hover {
+  font-weight: bold;
+}
+
+.tickets-main tbody tr:not(:first-child):has(td:hover)>td:first-child {
+  color: var(--color-orange);
+}
+
+.tickets-main.time tbody tr td:first-child {
+  width: 250px;
+}
+
+.tickets h2 {
+  font-size: 30px;
+}
+
+.training-list {
+  --padding-list: 10px;
+
+  margin-inline: auto;
+  padding-inline: var(--padding-list);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.training-item {
+  text-align: center;
+  width: 308px;
+  min-width: 308px;
+  height: 372px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-light);
+  box-shadow: 2px 2px 15px var(--color-body);
+  transition: var(--transition-duration);
+}
+
+.training-item>span {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.training-item:hover {
+  transform: translateY(-10px);
+}
+
+.training-item:hover p:first-child {
+  color: var(--color-orange);
+}
+
+.gym-time {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.gym-btn {
+  padding: 15px 80px;
+  border: 2px solid var(--color-orange);
+  color: var(--color-orange);
+  transition: var(--transition-duration);
+}
+
+.gym-btn:hover {
+  background-color: var(--color-orange);
+  color: var(--color-light);
+}
+
+
+/* trainers */
+
+.trainers {
+  padding-block: 100px;
+}
+
+.trainers-content {
+  display: flex;
+}
+
+.trainers-content h2 {
+  margin: 205px 60px 0 0;
+}
+
+.trainers-list {
+  display: flex;
+  gap: 30px;
+  transition: var(--transition-duration);
+}
+
+.trainers-item {
+  min-width: 250px;
+  width: 308px;
+}
+
+.trainer-text {
+  margin-top: 20px;
+  line-height: 150%;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.trainer-text span {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.trainers-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 40px;
+}
+
+.trainer-btn-prev,
+.trainer-btn-next {
+  background-color: transparent;
+  border: none;
+  transition: var(--transition-duration);
+}
+
+.trainer-btn-prev:hover,
+.trainer-btn-next:hover {
+  opacity: 0.7;
+}
+
+.questions {
+  height: 600px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../media/images/contacts.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.questions .container {
+  padding-block: 110px;
+  height: 100%;
+}
+
+.window {
+  float: right;
+  width: 350px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.window h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.window p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.window p span {
+  color: var(--color-orange);
+}
+
+form {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-light);
+  transition: var(--transition-duration);
+}
+
+form input:hover {
+  border-bottom: 1px solid var(--color-orange);
+}
+
+form input:focus {
+  outline: none;
+  border-bottom: 1px dashed var(--color-orange);
+}
+
+form button {
+  margin: 30px auto 10px;
+}
+
+.window p:last-child {
+  color: #FFFFFF50;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+
+/* map */
+
+.map {
+  position: relative;
+  height: 565px;
+}
+
+.map>img {
+  width: 100%;
+  height: 565px;
+  pointer-events: none;
+  object-fit: fill;
+  float: left;
+
+}
+
+.contacts {
+  box-sizing: border-box;
+  position: absolute;
+  background-color: var(--color-body);
+  min-width: 320px;
+  max-width: 396px;
+  top: 15%;
+  left: 10%;
+  padding: 50px 35px;
+}
+
+.contacts h3 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.info {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.line {
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+  align-items: start;
+}
+
+.column-tel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+/* footer */
+
+.footer {
+  background-color: black;
+}
+
+.footer .container {
+  padding-block: 30px 50px;
+}
+
+.grid-table {
+  position: relative;
+  color: #FFFFFF70;
+  display: grid;
+  grid-template-columns: 210px 3fr auto;
+  grid-template-rows: 1fr;
+  font-size: 14px;
+}
+
+.grid-table-inner {
+  margin-inline: auto;
+  font-size: inherit;
+  display: grid;
+  grid-template-columns: 1fr 1fr 185px;
+}
+
+.grid-table-inner a {
+  color: inherit;
+}
+
+.grid-block {
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.block1 {
+  align-items: center;
+}
+
+.block2,
+.block3,
+.block4,
+.block5,
+.block6 {
+  margin-top: 30px;
+}
+
+.block5 .links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.grid-table-inner2 {
+  display: grid;
+  margin-inline: auto;
+  grid-template-columns: 185px 1fr;
+}
+
+.footer-copyright {
+  display: none;
+}
+
+dialog {
+  z-index: 1000;
+  flex-direction: column;
+  min-width: 290px;
+  max-width: 900px;
+  width: 100%;
+  color: var(--color-light);
+  background-color: var(--color-body);
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(10px);
+}
+
+dialog .container {
+  margin: 50px 50px 100px 50px;
+}
+
+.logo-dialog {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dialog-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.ok {
+  font-weight: bold;
+}
+
+#ok {
+  justify-content: center;
+  margin-top: 80px;
+  display: flex;
+  font-size: 30px;
+  gap: 30px;
+  font-weight: bold;
+}
+
+#ok img {
+  width: 35px;
+  height: 25px;
+}
+
+#adress {
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-block {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#close-button-dialog {
+  border: none;
+  background-color: var(--color-body);
+}

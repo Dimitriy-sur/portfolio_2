@@ -1,0 +1,540 @@
+@media screen and (max-width: 1430px) {
+  .main-block {
+    align-items: center;
+  }
+
+  .images {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .img-1,
+  .img-2 {
+    width: 354px;
+  }
+
+  .main-description {
+    height: auto;
+    align-items: center;
+    width: auto;
+    margin-left: 0;
+  }
+
+  .main-desc-text {
+    text-align: center;
+  }
+
+  .slider>.slider-button,
+  .slyder>.slider-button {
+    display: none;
+  }
+
+
+}
+
+@media (max-width: 1100px) {
+
+  .container {
+    --container-margin: 10px;
+    margin-inline: var(--container-margin);
+  }
+
+  .header {
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+
+  .menu {
+    margin-inline: auto;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .hero-description h1 {
+    font-size: 58px;
+  }
+
+  .advantages-list {
+    margin-inline: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 232px);
+    grid-template-rows: repeat(2, 135px);
+  }
+
+  .advantages-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slider {
+    width: 100%;
+    height: 110%;
+  }
+
+  .slide-personal,
+  .slide-personal img {
+    width: 306px;
+    height: 430px;
+  }
+
+  .slide-gym,
+  .slide-gym img {
+    width: 422px;
+    height: 350px;
+  }
+
+
+  .overflow {
+    width: 200%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    touch-action: pan-x;
+  }
+
+  .slides-gym,
+  .slides-personal {
+    width: max-content;
+    transform: translateX(0%);
+    overflow: hidden;
+  }
+
+  .training-list {
+    flex-wrap: wrap;
+  }
+
+  .training-item {
+    width: 226px;
+    min-width: 226px;
+  }
+
+
+  .training-list:last-child .gym-time {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .gym-btn {
+    padding: 15px 50px;
+  }
+
+  .map {
+    overflow: hidden;
+  }
+
+  .contacts {
+    top: 15%;
+    left: 2%;
+    padding: 50px 25px;
+  }
+
+  .map {
+    overflow-x: hidden;
+    display: flex;
+    justify-content: start;
+  }
+
+  .map>img {
+    object-fit: none;
+    object-position: 20% center;
+    width: 1100px;
+  }
+
+
+  .grid-table-inner {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .block2,
+  .block3,
+  .block4 {
+    margin: 0;
+  }
+
+  .block5 {
+    min-width: 120px;
+  }
+
+  .block6 p {
+    --paragraphMarginBottom: 15px;
+  }
+
+
+}
+
+@media (max-width: 900px) {
+  .menu {
+    order: 1;
+  }
+
+  .main-block {
+    margin-inline: 0;
+  }
+
+  .tickets-main {
+    width: 830px;
+  }
+
+  .tickets {
+    padding-block: 90px;
+  }
+
+  .trainers-content h2 {
+    display: none;
+  }
+
+  .trainers-buttons {
+    display: none;
+  }
+
+  .training-list {
+    transform: translateX(0%) !important;
+  }
+
+  .grid-table {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-table-inner2 {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+  }
+
+  .block5 {
+    margin-top: 10px;
+    order: 1;
+  }
+
+  .block5,
+  .block6,
+  .block5 {
+    text-align: right;
+  }
+
+  .block6 p {
+    margin-bottom: 10px;
+  }
+
+  .links {
+    justify-content: end;
+  }
+
+  dialog {
+    max-width: 650px;
+    box-sizing: content-box;
+  }
+
+  dialog .container {
+    margin: 50px 30px 110px;
+  }
+
+  #ok {
+    align-items: center;
+    gap: 20px;
+  }
+
+  #ok p {
+    font-size: 20px;
+  }
+
+  .ok {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  #adress {
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .line img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-block {
+    font-size: 14px;
+  }
+
+  .social {
+    align-self: self-start;
+  }
+}
+
+@media (max-width: 750px) {
+  .map>img {
+    object-fit: cover;
+    width: 120%;
+    height: 235px;
+  }
+
+  .map {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+
+  .contacts {
+    position: static;
+  }
+
+  .grid-table {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .block5,
+  .block6,
+  .block5 {
+    text-align: left;
+  }
+
+  .links {
+    justify-content: start;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .hero {
+    height: 800px;
+    background-position: 15% 0%;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header>a {
+    display: none;
+  }
+
+  .burger,
+  .burger-footer {
+    display: flex;
+  }
+
+  .open span {
+    display: none;
+    background-color: var(--color-light);
+  }
+
+  .open span:nth-child(1) {
+    display: block;
+    transform: rotate(45deg) translate(5px, 4px);
+  }
+
+  .open span:nth-child(3) {
+    display: block;
+    transform: rotate(-45deg) translate(5px, -4px);
+  }
+
+  .open-menu {
+    background-color: rgb(0, 0, 0);
+    font-size: 14px;
+    display: flex;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+  }
+
+  .open-menu ul {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+    margin-inline: auto;
+  }
+
+  .hero-description h1 {
+    font-size: 48px;
+  }
+
+  .img-1,
+  .img-2 {
+    width: 290px;
+    height: 406px;
+  }
+
+  .advantages-list {
+    margin-inline: 80px;
+    display: grid;
+    grid-template-columns: repeat(1, 232px);
+    grid-template-rows: repeat(4, 135px);
+  }
+
+  .main-description h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .slide-personal,
+  .slide-personal img {
+    width: 200px;
+    height: 280px;
+  }
+
+  .slide-gym,
+  .slide-gym img {
+    width: 225px;
+    height: 186px;
+  }
+
+  .tickets {
+    padding-block: 80px;
+  }
+
+  .tickets h2 {
+    font-size: 25px;
+  }
+
+  .table-tickets {
+    font-size: 14px;
+  }
+
+  .training-item {
+    width: 290px;
+    padding: 30px 45px;
+  }
+
+  .trainers-item {
+    width: 250px;
+    height: 480px;
+  }
+
+  .trainers-item img {
+    width: 250px;
+    height: 330px;
+  }
+
+  .questions .container {
+    padding-block: 80px;
+  }
+
+  .window {
+    float: right;
+    width: 300px;
+  }
+
+  .contacts {
+    font-size: 14px;
+    padding-inline: 15px;
+  }
+
+
+  .grid-table-inner {
+    display: none;
+  }
+
+  .block1 {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .footer-text {
+    display: none;
+  }
+
+  .grid-block {
+    padding-left: 0;
+  }
+
+  .grid-table-inner.open-grid {
+    margin-top: 40px;
+    padding-block: 20px 40px;
+    width: 100%;
+    position: absolute;
+
+    background-color: #00000080;
+    backdrop-filter: blur(8px);
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-light);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "contacts about"
+      "abonements abonements";
+  }
+
+  .block4 {
+    grid-column: -1/1;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .block4 a:first-child {
+    display: none;
+  }
+
+  .block2,
+  .block3 {
+    text-align: center;
+  }
+
+  .block3 {
+    order: -1;
+  }
+
+  .block6 {
+    row-gap: 0;
+    margin-top: 10px;
+  }
+
+  .block5 {
+    margin-top: 5px;
+  }
+
+  .footer-copyright {
+    margin-top: 30px;
+    color: #FFFFFF70;
+    text-align: center;
+    display: block;
+  }
+
+  dialog {
+    max-width: 290px;
+  }
+
+  dialog .container {
+    margin: 20px 10px 30px;
+  }
+
+  #close {
+    width: 20px;
+    height: 20px;
+  }
+
+  #adress {
+    align-items: start;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .grid-table-inner2 {
+    margin: 0;
+  }
+
+  .footer-copyright {
+    text-align: left;
+  }
+}
