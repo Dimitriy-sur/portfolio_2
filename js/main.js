@@ -79,10 +79,16 @@ if (!modal) {
 function openModal(src) {
     const modalImg = document.getElementById('modal-img');
     modalImg.src = src;
+    document.body.style.overflow = 'hidden'; // 🔒 Отключаем скролл
+    document.body.style.height = '100vh';
 
     // Блокируем скролл и добавляем блюр к фону
-    // document.body.style.cssText = 'filter: blur(5px);';
-    document.querySelector('.container')?.parentElement?.style.setProperty('filter', 'blur(5px)');
+    document.querySelectorAll('.container').forEach(container => {
+        if (container.parentElement) {
+            container.parentElement.style.setProperty('filter', 'blur(5px)');
+        }
+    });
+    document.querySelector('.map').style.setProperty('filter', 'blur(5px)');
 
     // Показываем модальное окно
     setTimeout(() => {
@@ -98,7 +104,12 @@ function closeModal() {
 
     // Возвращаем скролл и убираем блюр
     document.body.style.cssText = '';
-    document.querySelector('.container')?.parentElement?.style.removeProperty('filter');
+    document.querySelectorAll('.container').forEach(container => {
+        if (container.parentElement) {
+            container.parentElement.style.removeProperty('filter');
+        }
+    });
+    document.querySelector('.map').style.removeProperty('filter');
 }
 
 // Закрытие по клику на фон
