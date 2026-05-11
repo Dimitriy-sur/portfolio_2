@@ -29,7 +29,7 @@ if (!modal) {
     const modalImageContainer = document.createElement('div');
     modalImageContainer.style.cssText = `
     position: relative;
-    width: 80%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,6 @@ if (!modal) {
     const modalImage = document.createElement('img');
     modalImage.id = 'modal-img';
     modalImage.style.cssText = `
-    width: 80%;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
@@ -77,24 +76,28 @@ if (!modal) {
 
 // Функция открытия модального окна
 function openModal(src) {
-    const modalImg = document.getElementById('modal-img');
-    modalImg.src = src;
-    document.body.style.overflow = 'hidden'; // 🔒 Отключаем скролл
-    document.body.style.height = '100vh';
+    if (src.includes('images')) {
+        console.log("Источник openModal: ", src);
+        console.log(typeof src);
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = src;
+        document.body.style.overflow = 'hidden'; // 🔒 Отключаем скролл
+        document.body.style.height = '100vh';
 
-    // Блокируем скролл и добавляем блюр к фону
-    document.querySelectorAll('.container').forEach(container => {
-        if (container.parentElement) {
-            container.parentElement.style.setProperty('filter', 'blur(5px)');
-        }
-    });
-    document.querySelector('.map').style.setProperty('filter', 'blur(5px)');
+        // Блокируем скролл и добавляем блюр к фону
+        document.querySelectorAll('.container').forEach(container => {
+            if (container.parentElement) {
+                container.parentElement.style.setProperty('filter', 'blur(5px)');
+            }
+        });
+        document.querySelector('.map').style.setProperty('filter', 'blur(5px)');
 
-    // Показываем модальное окно
-    setTimeout(() => {
-        modal.style.opacity = '1';
-        modal.style.visibility = 'visible';
-    }, 10);
+        // Показываем модальное окно
+        setTimeout(() => {
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+        }, 10);
+    }
 }
 
 // Функция закрытия модального окна
@@ -122,7 +125,6 @@ modal.addEventListener('click', function (e) {
 // Добавляем обработчики клика на все изображения
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', function () {
-        console.log("Источник img: ", this.src)
         openModal(this.src);
     });
 });
