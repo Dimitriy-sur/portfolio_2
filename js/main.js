@@ -104,6 +104,10 @@ function closeModal() {
 
     // Возвращаем скролл и убираем блюр
     document.body.style.cssText = '';
+    document.querySelector('meta[name="viewport"]').setAttribute(
+        'content',
+        'width=device-width, initial-scale=1.0'
+    );
     document.querySelectorAll('.container').forEach(container => {
         if (container.parentElement) {
             container.parentElement.style.removeProperty('filter');
