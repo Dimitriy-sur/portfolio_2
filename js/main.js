@@ -81,7 +81,7 @@ function openModal(src) {
     modalImg.src = src;
 
     // Блокируем скролл и добавляем блюр к фону
-    // document.body.style.cssText = 'overflow: hidden; filter: blur(5px);';
+    document.body.style.cssText = 'overflow: hidden; filter: blur(5px);';
     document.querySelector('.container')?.parentElement?.style.setProperty('filter', 'blur(5px)');
 
     // Показываем модальное окно
