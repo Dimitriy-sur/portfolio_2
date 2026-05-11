@@ -76,28 +76,25 @@ if (!modal) {
 
 // Функция открытия модального окна
 function openModal(src) {
-    if (src.includes('images')) {
-        console.log("Источник openModal: ", src);
-        console.log(typeof src);
-        const modalImg = document.getElementById('modal-img');
-        modalImg.src = src;
-        document.body.style.overflow = 'hidden'; // 🔒 Отключаем скролл
-        document.body.style.height = '100vh';
 
-        // Блокируем скролл и добавляем блюр к фону
-        document.querySelectorAll('.container').forEach(container => {
-            if (container.parentElement) {
-                container.parentElement.style.setProperty('filter', 'blur(5px)');
-            }
-        });
-        document.querySelector('.map').style.setProperty('filter', 'blur(5px)');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = src;
+    document.body.style.overflow = 'hidden'; // 🔒 Отключаем скролл
+    document.body.style.height = '100vh';
 
-        // Показываем модальное окно
-        setTimeout(() => {
-            modal.style.opacity = '1';
-            modal.style.visibility = 'visible';
-        }, 10);
-    }
+    // Блокируем скролл и добавляем блюр к фону
+    document.querySelectorAll('.container').forEach(container => {
+        if (container.parentElement) {
+            container.parentElement.style.setProperty('filter', 'blur(5px)');
+        }
+    });
+    document.querySelector('.map').style.setProperty('filter', 'blur(5px)');
+
+    // Показываем модальное окно
+    setTimeout(() => {
+        modal.style.opacity = '1';
+        modal.style.visibility = 'visible';
+    }, 10);
 }
 
 // Функция закрытия модального окна
@@ -125,6 +122,8 @@ modal.addEventListener('click', function (e) {
 // Добавляем обработчики клика на все изображения
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', function () {
-        openModal(this.src);
+        if (img.src.includes('images')) {
+            openModal(this.src);
+        }
     });
 });
