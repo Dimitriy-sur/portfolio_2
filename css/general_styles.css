@@ -1,0 +1,16 @@
+.open-img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: auto;
+    border:
+        4px solid black,
+        2px solid white;
+}
+
+.blur {
+    filter: blur(5px);
+    user-select: none;
+}
