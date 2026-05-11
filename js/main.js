@@ -104,15 +104,26 @@ function closeModal() {
 
     // Возвращаем скролл и убираем блюр
     document.body.style.cssText = '';
+    document.body.style.removeProperty('transform');
+
+
     document.querySelector('meta[name="viewport"]').setAttribute(
         'content',
         'width=device-width, initial-scale=1.0'
     );
+
+
     document.querySelectorAll('.container').forEach(container => {
         if (container.parentElement) {
             container.parentElement.style.removeProperty('filter');
         }
     });
+
+    const modalImg = document.getElementById('modal-img');
+    if (modalImg) {
+        modalImg.style.transform = 'scale(1)';
+    };
+
     document.querySelector('.map').style.removeProperty('filter');
 }
 
