@@ -12,7 +12,7 @@ if (!modal) {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: content;
+    width: 100%;
     height: auto;
     background: rgba(0, 0, 0, 0.85);
     display: flex;
@@ -29,7 +29,7 @@ if (!modal) {
     const modalImageContainer = document.createElement('div');
     modalImageContainer.style.cssText = `
     position: relative;
-
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ if (!modal) {
     const modalImage = document.createElement('img');
     modalImage.id = 'modal-img';
     modalImage.style.cssText = `
-    width: 100%;
+    width: 80%;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
@@ -81,7 +81,7 @@ function openModal(src) {
     modalImg.src = src;
 
     // Блокируем скролл и добавляем блюр к фону
-    document.body.style.cssText = 'overflow: hidden; filter: blur(5px);';
+    // document.body.style.cssText = 'filter: blur(5px);';
     document.querySelector('.container')?.parentElement?.style.setProperty('filter', 'blur(5px)');
 
     // Показываем модальное окно
